@@ -17,14 +17,12 @@ var fetched = struct {
 
 func fetch(url string) (*html.Node, error) {
 	res, err := http.Get(url)
-
 	if err != nil {
 		log.Println(err)
 		return nil, err
 	}
 
 	doc, err := html.Parse(res.Body)
-
 	if err != nil {
 		log.Println(err)
 		return nil, err
