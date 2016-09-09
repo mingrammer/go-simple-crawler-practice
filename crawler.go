@@ -10,6 +10,8 @@ import (
 	"golang.org/x/net/html"
 )
 
+var startURL = "https://github.com/mingrammer/following"
+
 var fetched = struct {
 	m map[string]error
 	sync.Mutex
@@ -97,5 +99,5 @@ func main() {
 	numCPUs := runtime.NumCPU()
 	runtime.GOMAXPROCS(numCPUs)
 
-	crawl("https://github.com/mingrammer/following")
+	crawl(startURL)
 }

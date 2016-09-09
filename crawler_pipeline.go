@@ -10,6 +10,8 @@ import (
 	"golang.org/x/net/html"
 )
 
+var startURL = "https://github.com/mingrammer/following"
+
 type result struct {
 	url  string
 	name string
@@ -130,7 +132,7 @@ func main() {
 		close(c)
 	}()
 
-	urls <- "https://github.com/mingrammer/following"
+	urls <- startURL
 
 	count := 0
 
